@@ -1,11 +1,14 @@
 import struct
 import ctypes
 from time import sleep
+import os
+import sys
 
-PATH = ['C:\\Users\\miro9\\Desktop\\rgbslide\\b.png', 
-'C:\\Users\\miro9\\Desktop\\rgbslide\\p.png', 
-'C:\\Users\\miro9\\Desktop\\rgbslide\\lb.png', 
-'C:\\Users\\miro9\\Desktop\\rgbslide\\y.png']
+path = os.getcwd() + "\\mrinc"
+
+print(path)
+
+files = os.listdir(path)
 
 SPI_SETDESKWALLPAPER = 20
 
@@ -22,6 +25,7 @@ def changeBG(bg):
 
 
 while True:
-    for bg in PATH:
-        changeBG(bg)
-        sleep(1)
+    for file in files:
+        if ".png" in file:
+            changeBG(os.path.join(path, file))
+            sleep(1)

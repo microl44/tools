@@ -4,7 +4,9 @@ from time import sleep
 import os
 import sys
 
-path = sys.argv[1]
+path = os.getcwd() + "\\default"
+
+print(path)
 
 files = os.listdir(path)
 
@@ -22,8 +24,8 @@ def changeBG(bg):
         ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, bg, 3)
 
 
-while True:
-    for file in files:
-        if ".png" in file:
-            changeBG(os.path.join(path, file))
-            sleep(1)
+for file in files:
+    if ".jpg" in file:
+        changeBG(os.path.join(path, file))
+        exit()
+exit()
