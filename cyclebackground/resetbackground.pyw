@@ -23,7 +23,6 @@ def changeBG(bg):
     else:
         ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, bg, 3)
 
-
 for file in files:
     if ".jpg" in file:
         changeBG(os.path.join(path, file))
