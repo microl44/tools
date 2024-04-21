@@ -4,7 +4,7 @@ from time import sleep
 import os
 import sys
 
-path = os.getcwd() + "\\mrinc"
+path = os.getcwd() + "\\pyw"
 
 print(path)
 
