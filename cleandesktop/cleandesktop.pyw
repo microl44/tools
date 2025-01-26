@@ -9,4 +9,6 @@ source = 'C:\\Users\\' + username + '\\Desktop'
 destination = r"C:\tmp\desktop"
 
 for file in os.listdir(source):
-	shutil.move(source + r"\\" + file, destination)
+	if file != "toolsSC.lnk":
+		shutil.move(source + r"\\" + file, destination)
+	

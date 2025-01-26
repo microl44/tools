@@ -26,4 +26,4 @@ while True:
     for file in files:
         if ".png" in file:
             changeBG(os.path.join(path, file))
-            sleep(1)
+            sleep(0.1)

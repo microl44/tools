@@ -35,7 +35,10 @@ def get_dir_size(dir_path):
 
 for the_dir in os.listdir(path):
     if os.path.isdir(path + '/' + the_dir):
-        size = int(((get_dir_size(path + '/' + the_dir)) / 1024) / 1024)
+        try:
+            size = int(((get_dir_size(path + '/' + the_dir)) / 1024) / 1024)
+        except:
+            size = -1
         if size > 0:
             dirs.append({"name" : the_dir, "size" : size})
 
